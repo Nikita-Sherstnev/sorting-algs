@@ -1,5 +1,6 @@
 class SelectionSort():
-    def sort(self, lst):
+    @staticmethod
+    def sort(lst):
         for i in range(0, len(lst)):
             min = i
             for j in range(i+1, len(lst)):
@@ -10,7 +11,8 @@ class SelectionSort():
 
 
 class InsertionSort():
-    def sort(self, lst):
+    @staticmethod
+    def sort(lst):
         for i in range(1, len(lst)):
             j = i
             while j > 0 and lst[j] < lst[j-1]:
