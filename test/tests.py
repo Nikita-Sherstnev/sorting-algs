@@ -2,7 +2,7 @@ import unittest
 from unittest import TestCase
 import random
 
-from sorting.sorting import SelectionSort, InsertionSort
+from sorting.sorting import SelectionSort, InsertionSort, Shellsort
 
 class TestBaseSort(TestCase):
     def is_sorted(self, lst):
@@ -28,6 +28,9 @@ class TestSortingClass(TestBaseSort, TestCase):
     
     def test_insertion_sort(self):
         self._test_sort_class(InsertionSort)
+
+    def test_shellsort(self):
+        self._test_sort_class(Shellsort)
         
     def _test_sort_class(self, sort_class):
         sort_class.sort(self.SORTED_LIST)

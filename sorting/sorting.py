@@ -18,3 +18,19 @@ class InsertionSort():
             while j > 0 and lst[j] < lst[j-1]:
                 lst[j], lst[j-1] = lst[j-1], lst[j]
                 j-=1
+
+
+class Shellsort():
+    @staticmethod
+    def sort(lst):
+        h = 1
+        while h < len(lst)//3:
+            h = 3*h + 1
+        while h >= 1:
+            for i in range(h, len(lst)):
+                j = i
+                while j >= h and lst[j] < lst[j-h]:
+                    lst[j], lst[j-h] = lst[j-h], lst[j]
+                    j -= h
+            h = h//3
+
